@@ -75,3 +75,12 @@ const router = createBrowserRouter([
 const AppRouter = () => <RouterProvider router={router} />;
 
 export default AppRouter;
+import ProductosPage from '@/pages/ProductosPage';
+
+<Route path="/productos" element={<ProductosPage />} />
+import ProductosPage from '@/pages/ProductosPage';
+
+<Route path="/productos" element={<ProductosPage />} />
+import ProductosPage from '@/pages/ProductosPage';
+
+<Route path="/productos" element={<ProductosPage />} />
