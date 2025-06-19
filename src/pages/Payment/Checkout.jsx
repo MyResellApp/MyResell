@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { loadStripe } from '@stripe/stripe-js';
 
 // TODO: Reemplaza con tu Publishable Key de Stripe REAL (Live)
-const STRIPE_PUBLISHABLE_KEY = "pk_live_YOUR_REAL_STRIPE_PUBLISHABLE_KEY"; 
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 const stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY);
 
 const Checkout = () => {
