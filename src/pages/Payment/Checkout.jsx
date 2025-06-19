@@ -12,7 +12,6 @@ import { loadStripe } from '@stripe/stripe-js';
 
 // TODO: Reemplaza con tu Publishable Key de Stripe REAL (Live)
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
-const stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY);
 
 const Checkout = () => {
   const { planId } = useParams();
