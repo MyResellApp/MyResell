@@ -35,8 +35,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
       { path: 'pricing', element: <PricingPage /> },
-      { path: 'products', element: <ProductsPage /> },         // En inglés
-      { path: 'productos', element: <ProductsPage /> },        // Opcional en español
+      { path: 'products', element: <ProductsPage /> }, // Ruta pública
       { path: 'contact', element: <Contact /> },
       { path: 'terms', element: <Terms /> },
       { path: 'privacy', element: <Privacy /> },
