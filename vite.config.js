@@ -5,11 +5,18 @@ import { createLogger, defineConfig } from 'vite';
 const isDev = process.env.NODE_ENV !== 'production';
 let inlineEditPlugin, editModeDevPlugin;
 
-if (isDev) {
-	try {
-		inlineEditPlugin = (await import('./plugins/visual-editor/vite-plugin-react-inline-editor.js')).default;
-		editModeDevPlugin = (await import('./plugins/visual-editor/vite-plugin-edit-mode.js')).default;
-	} catch (e) {
+let inlineEditPlugin = () => {};
+let editModeDevPlugin = () => {};
+
+try {
+  if (isDev) {
+    inlineEditPlugin = require('./plugins/visual-editor/vite-plugin-react-inline-editor.js').default;
+    editModeDevPlugin = require('./plugins/visual-editor/vite-plugin-edit-mode.js').default;
+  }
+} catch (e) {
+  console.warn('Edit mode plugins not found. Skipping...');
+}
+catch (e) {
 		console.warn('Editor plugins no disponibles en producción o entorno sin archivos.');
 		inlineEditPlugin = () => ({ name: 'noop-inline-edit' });
 		editModeDevPlugin = () => ({ name: 'noop-edit-mode' });
