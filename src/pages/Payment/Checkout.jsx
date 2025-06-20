@@ -10,7 +10,6 @@ import { Loader2, CheckCircle, XCircle, ShoppingCart, CreditCard, ShieldCheck, B
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { loadStripe } from '@stripe/stripe-js';
 
-// ✅ Stripe Promise (una sola vez)
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 const Checkout = () => {
